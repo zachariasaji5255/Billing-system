@@ -1,0 +1,222 @@
+def title():
+    print("\t\t\tINDIAN COFFE HOUSE")                #printing title
+    print("\t\t\t'''''''''''''''''''''''''''''''''''''''''''' ")
+
+def options():                                           
+    print("Choose any of the option sir :")         #printing options
+    print("""                                                           
+OPTIONS                                                         
+''''''''''''''''''
+1--> View Menu
+2--> Enter Customer Details(MANDATORY AS PER COVID-19 GUIDLINES)
+3--> Drinks(COUNTER ONE)
+4--> Snacks(COUNTER TWO)
+6--> Exit
+                  """)                                                   
+     
+def menu1():                                                      #printing drinksmenu
+    print("""
+--------------------------------------------
+    DRINKS    -        PRICE        
+--------------------------------------------
+    1.Tea                   :10/-            
+    2.Coffee              :15/-            
+    3.Milk coffee       :17/-           
+    4.Lemon soda    :7/-
+    5.Apple juice      :20/-
+    6.Mango juice     :20/-
+    7.Orange juice    :20/-
+--------------------------------------------
+""")                                                             
+    
+def menu2():                                                    #printing snacksmenu
+    print("""
+----------------------------------------------
+    SNACKS     -      PRICE
+----------------------------------------------
+    1.Masala dosa     :30/-
+    2.Ghee dosa        :25-
+    3.Iddly                 :8/-
+    4.Chappathi         :7/-
+    5.Veg.Kuruma     :17/-
+    6.Veg.sandwich   :20/-
+    7.Veg.Biriyani      :50/-
+----------------------------------------------
+""")
+    
+def viewmenu():                                 #printing both menus
+    menu1()                                                      
+    menu2()
+
+def CRM(): #Customer relationship management
+    a=input("Are you a new customer-->yes / no=\t")
+        #inputing data
+    if a.upper()=="YES":
+        name=str(input("\nEnter your name:"))
+        address=input("\nEnter your address:")
+        phoneno=int(input("\nEnter your phone no.:"))
+        nxtphoneno=int(input("\nEnter your second phone no.:"))
+        import random
+        cardno=random.randint(1000000,9999999)
+        print("\n","Your customercard no. is=",cardno,"\n")
+        
+    
+def Drinks(c):
+    cost=0
+    dict1={}
+    print("Enter  8  to Exit.")
+    print("------------------------")
+    
+    #inputing choice and calculating bill
+    for i in range(10):
+        c=int(input("Enter your choice"))
+        
+        if (c==1):
+            d=int(input("Enter the quantity:"))
+            cost=cost+10*d
+            dict1.update({"Tea         ":cost})
+        elif (c==2):
+            d=int(input("Enter the quantity:"))
+            cost=cost+15*d
+            dict1.update({"coffee      ":cost})
+        elif (c==3):
+            d=int(input("Enter the quantity:"))
+            cost=cost+17*d
+            dict1.update({"Milkcoffee  ":cost})
+        elif (c==4):
+            d=int(input("Enter the quantity:"))
+            cost=cost+7*d
+            dict1.update({"Lemon soda  ":cost}) 
+        elif (c==5):
+            d=int(input("Enter the quantity:"))
+            cost=cost+20*d
+            dict1.update({"Apple juce  ":cost})
+        elif (c==6):
+            d=int(input("Enter the quantity:"))
+            cost=cost+20*d
+            dict1.update({"Mango juice ":cost})
+        elif (c==7):
+            d=int(input("Enter the quantity:"))
+            cost=cost+20*d
+            dict1.update({"Orange juice":cost})
+        elif (c==8):
+            break
+        else:
+            print("invalid option")
+    return final(dict1)
+        
+    
+def final(dict1):
+    l1=list(dict1.keys())
+    l2=list(dict1.values())
+    totel1=sum(l2)
+    print(totel1)
+    print("✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜")
+    print("✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜")
+    print("ITEM                                     AMOUNT")
+    print("-----------------------------------------------")
+    for (i,j) in zip(l1,l2):
+        print(i,"                               ",j)
+    print("TOTEL PAYABLE AMOUNT = ",totel1)
+    print("-----------------------------------------------")
+    print("ENJOY YOUR DRINK")
+    print("               ❉❉❉❉❉❉❉THANKYOU❉❉❉❉❉❉❉")
+    print("✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜")
+    print("✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜")
+    
+
+
+     
+#__main__
+c=""
+
+def Snacks(c):                               
+    cost=0
+    dict2={}
+    print("Press  8  to Exit.")
+    print("------------------------")
+    
+    #inputing choice and calculating bill
+    for i in range(10):
+        c=int(input("Enter your choice"))
+              
+        if (c==1):
+            d=int(input("Enter the quantity:"))
+            cost=cost+30*d
+            dict2.update({"Masala dosa ":cost})
+        elif (c==2):
+            d=int(input("Enter the quantity:"))
+            cost=cost+25*d
+            dict2.update({"Ghee dosa   ":cost})
+        elif (c==3):
+            d=int(input("Enter the quantity:"))
+            cost=cost+8*d
+            dict2.update({"Iddly       ":cost})
+        elif (c==4):
+            d=int(input("Enter the quantity:"))
+            cost=cost+7*d
+            dict2.update({"Chappathi   ":cost}) 
+        elif (c==5):
+            d=int(input("Enter the quantity:"))
+            cost=cost+17*d
+            dict2.update({"Veg kuruma  ":cost})
+        elif (c==6):
+            d=int(input("Enter the quantity:"))
+            cost=cost+20*d
+            dict2.update({"veg sandwich":cost})
+        elif (c==7):
+            d=int(input("Enter the quantity:"))
+            cost=cost+50*d
+            dict2.update({"Veg biriny  ":cost})
+        elif (c==8):
+            break
+        else:
+            print("invalid option")
+    return finalof(dict2)
+
+def finalof(dict2):
+    l1=list(dict2.keys())
+    l2=list(dict2.values())
+    totel2=sum(l2)
+    print(totel2)
+    print("✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜")
+    print("✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜")
+    print("ITEM                                       AMOUNT")
+    for (i,j) in zip(l1,l2):
+        print(i,"                               ",j)
+    print("TOTEL PAYABLE AMOUNT=",totel2)
+    print("ENJOY YOUR DRINK")
+    print("               ❉❉❉❉❉❉❉THANKYOU❉❉❉❉❉❉❉")
+    print("✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜")
+    print("✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜✜")
+        
+        
+def Exit():
+    
+    
+    exit()
+    
+
+def main():
+    
+    title()
+    while(1):
+        options()
+        opt=int(input("Enter the option :"))
+        if opt==1:
+            viewmenu()
+        elif opt==2:
+            CRM()
+        elif opt==3:
+            menu1()
+            Drinks(c)
+        elif opt==4:
+            menu2()
+            Snacks(c)
+        elif opt==6:
+            Exit()
+        else:
+            print("Invalid option")
+main()
+
+
